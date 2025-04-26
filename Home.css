@@ -1,0 +1,106 @@
+@media screen and (min-width: 800px) {
+    .first-list {
+        display: table-cell;
+        width: 50%;
+        table-layout: fixed;
+        width: 100%;
+    }
+}
+
+
+
+div {
+    width: 100%;
+    align-items: center;
+}
+
+.clickbutton {
+    gap: 20px;
+}
+
+.about {
+    text-align: center;
+    display: flex;
+}
+
+img {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 150px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+button:active {
+    box-shadow: inset 0 4px 6px 4px rgba(0, 0, 0, 0,1);
+    transform: translateY(2px);
+}
+
+.owner {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: contain;
+}
+
+.owner img {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.owner h1 {
+    position: absolute;
+    right: 30px;
+    top: 150px;   
+}
+
+.aboutme {
+    text-align: center;
+}
+
+.coffee {
+    width: 100%;
+}
+
+.coffee-container .container-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+.container-img-about {
+    width: 50%;
+    height: 300px;
+    object-fit: contain;
+}
+
+.container-opisaniecoffee {
+    width: 50%;
+    
+}
+
+.container-img-menu {
+    right: 100%;
+}
+
+.menuimg {
+    object-fit: contain;
+    width: 30%;
+}
+
+footer {
+    background-color: rgb(174, 168, 168);
+    color: black;
+}

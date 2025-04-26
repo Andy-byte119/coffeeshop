@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/Home.css">
+    <title>GoodCofee</title>
+    <link rel="icon" href="static/icon/favicon.ico" type="image/x-icon">
+</head>
+<body class="first-list">
+    <br>
+    <!--добавить <div> для каждой кнопки-->
+    <div class="about">
+        <div class="clickbutton">
+            <button onclick="window.location.href='#button1'">О нас</button>
+        </div>
+        <div class="clickbutton">
+            <button onclick="window.location.href='#button2'">Меню</button>
+        </div>
+        <div class="clickbutton">
+            <button onclick="window.location.href='#button3'">Франшиза</button>
+        </div>
+    </div>
+    <br>
+    <!--увеличить кнопки. решить проблему с меню и описанием-->
+    <div class="owner">
+        <img src="static/imagefranchise/shop-owner.jpg" alt="Создатель нашей кофейни">
+        <h1>Хороший кофе = хорошее настроение</h1>
+    </div>
+    <br>
+    <!--ошибка. статус: исправлена. описание: блоки 'container-img' и 'container-opisaniecoffee' не вставали параллельно. исправление: добаление дополнительного <div>-->
+    <div class="coffee" id="button1">
+        <div class="aboutme">
+            <h2 class="zagolovok"> О нас: </h2>
+        </div>
+        <div class="coffee-container">
+            <div class="container-img-about">
+                <img class="coffeeimg" src="static/image-menu/FullCoffee.jpg" alt="Стаканчик полный зёрен кофе">
+            </div>
+            <div class="container-opisaniecoffee">
+                <p class="opisaniecoffee">Для нас кофе не просто напиток для заряда энергией, для нас кофе это наша жизнь, мы любим аромат кофе, вкус и самое главное <b>КАЧЕСТВО</b> напитка</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="Menu" id="button2">
+        <div class="aboutme">
+            <h2 class="zgolovok"><a href="/menu">Меню</a></h2>
+        </div>
+        <div class="container-menu">
+            <div class="container-img-menu">
+                <img class="menuimg" src="static/image-menu/CoffeeMenu.jpg" alt="Человек держит в руках кружку кофе">
+            </div>
+            <div>
+                <p>У нас своя кухня и мы сами готовим каждое блюдо</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="Frachise" id="button3">
+        <h2 class="aboutme"><a href="/franchise">Франшиза</a></h2>
+        <p class="ofranchise">Мы уже выросли в масштабах нашего города, и теперь хотим распространять нашу идею по всей стране. 
+            Если Вы согласны с нашими идеалами и хотите присоединиться к нам и помочь стать больше, мы предлагаем
+            оформить франшизу.
+        </p>
+    </div>
+    <hr>
+    <footer>
+        <p class="location">Наш головной офис находится по адресу:<address>Город Рязань, ул. Ленина 24</address></p>
+        <br>
+        <p class="creators">на данной странице используются картинки с сайта </p>
+        <br>
+    </footer>
+</body>
+</html>
+
