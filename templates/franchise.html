@@ -8,36 +8,88 @@
     <link rel="icon" href="static/icon/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <h1>Откройте кофейню в своём городе и станьте частью семьи GoodCofee</h1>
-    <div>
-        <h2>Почему именно мы? </h2>
-        <li>Отсутствие паушального взноса</li>
-        <li>Роялти всего 2%</li>
-        <li>Тренинги для наших франчайзи каждые полгода</li>
-        <li>Более 200 открытых кофейн по всей России</li>
+    <div class="monoimg">
+        <!--доделать как на первой странице. решить проблему с отсупом справа-->
+        <img class="privetstvieimg" src="static/imagefranchise/privetstvie-franchise.jpg" alt="девушка за столиком раздачи">
+        <h1 class="mainzagolovok">Откройте кофейню в своём городе и станьте частью семьи GoodCofee</h1>
     </div>
-    <div>
-        <h2>Что входит в стоимость франшизы?</h2>
-        <li>Ремонт: мы полностью берём на себя заказ материалов и разработку дизайна</li>
-        <li>Маркетинг: мы разрабатываем стратегию, создаём брендбуки</li>
-        <li>Меню: мы персонально для каждой кофейни создаём меню</li>
-    </div>
-    <div>
-        <h2>Стационарная кофейня с кухней</h2>
-        <li>Вложения - от 5млн </li>
-        <li>Рекомендуемая площадь - от 50кв до 100кв</li>
-        <li>Примерная прибыль - от 250тыс.</li>
-        <li>Примерная окупаемость - 12мес.</li>
-        <div class="container">
-            <img href="static/Image-franchise/people-coffee-shop.jpg">
-        </div>
-    </div>
-    <div>
-        <h2>Стационарная кофейня без кухни</h2>
-        <li>Вложения - от 3млн</li>
-        <li>Рекомендуемая площадь - 30кв до 50кв</li>
-        <li>Примерная прибыль - от 100тыс.</li>
-        <li>Примерная окупаемость - 18мес.</li>
-    </div>
+    <section class="textblock">
+        <h2 class="zagolovok">Почему именно мы? </h2>
+        <ul class="polza mainlist">
+            <li class="icon-diamond">Отсутствие паушального взноса</li>
+            <li class="icon-royalty">Роялти всего 2%</li>
+            <li class="icon-student">Тренинги для наших франчайзи каждые полгода</li>
+            <li class="icon-cafe">Более 200 открытых кофейн по всей России</li>
+            <li class="icon-repair">Ремонт: мы полностью берём на себя заказ материалов и разработку дизайна</li>
+            <li class="icon-marketing">Маркетинг: мы разрабатываем стратегию, создаём брендбуки</li>
+            <li class="icon-menu">Меню: мы персонально для каждой кофейни создаём меню</li>
+        </ul>
+    </section>
+    <section class="aboutfranchise">
+        <h2 class="zagolovok">Стационарная кофейня без кухни</h2>
+        <ul class="polza franchise1">
+            <li class="icon-investition">Вложения - от 3млн</li>
+            <li class="icon-square">Рекомендуемая площадь - 30кв до 50кв</li>
+            <li class="icon-profit">Примерная прибыль - от 100тыс.</li>
+            <li class="icon-timeout">Примерная окупаемость - 18мес.</li>
+        </ul>
+        <nav class="Scroll_Wrapper">
+            <figure class="photocoffeeschop">
+                <img src="static/imagefranchise/barman-bar.jpg">
+                <img src="static/imagefranchise/barman-bar2.jpg">
+                <img src="static/imagefranchise/blur-kofeina-inter-er.jpg">
+                <img src="static/imagefranchise/bar-coffeeschop.jpg">
+            </figure>
+        </nav>
+    </section>
+    <section class="aboutfranchise">
+        <h2 class="zagolovok">Стационарная кофейня с кухней</h2>
+        <ul class="polza franchise2">
+            <li class="icon-investition">Вложения - от 5млн </li>
+            <li class="icon-square">Рекомендуемая площадь - от 50кв до 100кв</li>
+            <li class="icon-profit">Примерная прибыль - от 250тыс.</li>
+            <li class="icon-timeout">Примерная окупаемость - 12мес.</li>
+        </ul>
+        <nav class="Scroll_Wrapper">
+            <figure class="photocoffeeschop">
+                <img src="static/imagefranchise/coffee-shop-up.jpg">
+                <img src="static/imagefranchise/interier-s-cvetkom.jpg">
+                <img src="static/imagefranchise/bar-concept.jpg">
+            </figure>
+        </nav>
+    </section>
+    <section class="oformlenie">
+        <h2 class="zagolovok">Понравились кофейни? присоединяйтесь к нам!</h2>
+        <p>Оставьте заявку на оформление франшизы и наш менеджер с вами свяжется</p>
+        <!--исправить расположение-->
+        <form class="formfranchise" id="contact-form" action="/franchise" method="post">
+            {% if error %}<p class="error"><strong>Error:</strong>{{error}}</p>{% endif %}
+            <div class="form-group">
+                <label>Имя:</label>
+                <input type="text" name="full_name" required placeholder="Ваше имя">
+            </div>
+            <div class="form-group">
+                <label>Телефон:</label>
+                <input type="tel" name="phone" required placeholder="+7 (XXX) XXX XX XX" pattern="\+7\s?[0-9]{3}\s?[0-9]{3}\s?[0-9]{2}\s?[0-9]{2}">
+            </div>
+            <div class="form-group">
+                <label>E-mail:</label>
+                <input type="email" name="email" required placeholder="my_e-mail1234@mail.com">
+            </div>
+            <button type="submit" class="submitbd">Отправить заявку</button>
+        </form>
+    </section>
+    <!--сделать футер. готово!-->
+    <footer>
+        <section class="addresofice">
+            <p class="location">Наш головной офис находится по адресу<address>Город Рязань, ул. Ленина 24</address></p>
+        </section>
+        <section class="autors">
+            <p class="creators">На сайте используются фотографии с сайта Freepik</p>
+        </section>
+        <section class="map">
+            <p class="karta">тут должна быть карта</p>
+        </section>
+    </footer>
 </body>
 </html>

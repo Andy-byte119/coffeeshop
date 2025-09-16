@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(242, 191, 123);
+}
+
 @media screen and (min-width: 800px) {
     .first-list {
         display: table-cell;
@@ -7,48 +11,75 @@
     }
 }
 
-
-
-div {
-    width: 100%;
-    align-items: center;
+figcaption {
+    width: 50%;
+    height: 100%;
+    text-align: center;
 }
 
-.clickbutton {
-    gap: 20px;
+.conteiner-menu, .coffee-container, .Franchise {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.clicklink {
+    left: 100%;
+    
 }
 
 .about {
+    width: 100%;
     text-align: center;
     display: flex;
+    grid-gap: 10px;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 15px 15px 15px;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
 }
 
 img {
     border-radius: 20px;
-    width: 100%;
+    width: 550px;
     height: 100%;
+    box-shadow: 0px 10px 10px 0px;
 }
 
 button {
-    background-color: white;
+    background-color: rgb(242, 191, 123);
     border-radius: 8px;
-    padding: 10px 20px;
     font-size: 16px;
     width: 150px;
+    height: 40px;
     transition: all 0.3s ease;
     border: none;
+    margin-top: 30px;
 }
 
 button:active {
-    box-shadow: inset 0 4px 6px 4px rgba(0, 0, 0, 0,1);
     transform: translateY(2px);
 }
+
+button:hover {
+    background: #556b2f;
+}
+
+
 
 .owner {
     position: relative;
     width: 100%;
     height: 600px;
-    overflow: contain;
+}
+
+.owner h1 {
+    text-align: center;
 }
 
 .owner img {
@@ -58,42 +89,24 @@ button:active {
     object-fit: cover;
 }
 
-.owner h1 {
+.brand {
     position: absolute;
     right: 30px;
     top: 150px;   
 }
 
 .aboutme {
+    margin: 0 auto;
     text-align: center;
+    width: 200px;
+    border-radius: 8px;
+    background-color: #556b2f;
 }
 
 .coffee {
     width: 100%;
 }
 
-.coffee-container .container-menu {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    width: 100%;
-    align-items: center;
-}
-
-.container-img-about {
-    width: 50%;
-    height: 300px;
-    object-fit: contain;
-}
-
-.container-opisaniecoffee {
-    width: 50%;
-    
-}
-
-.container-img-menu {
-    right: 100%;
-}
 
 .menuimg {
     object-fit: contain;
@@ -103,4 +116,14 @@ button:active {
 footer {
     background-color: rgb(174, 168, 168);
     color: black;
+    width: 100%;
+    height: 200px;
+    margin-top: 30px;
+    gap: 30px;
+    display: flex;
+}
+
+.creators, .location, .map {
+    width: 33.33%;
+    text-align: center;
 }

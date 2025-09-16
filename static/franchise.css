@@ -1,0 +1,202 @@
+body {
+    background-color: rgb(242, 191, 123);
+}
+
+.aboutfranchise {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.monoimg {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.monoimg img {
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.mainzagolovok {
+    position: absolute;
+    bottom: 350px;
+    top: 10px;
+    left: 85px;
+}
+
+.textblock {
+    margin-top: 50px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.zagolovok {
+    margin-bottom: 20px;
+    width: 700px;
+    height: 50px;
+    padding-top: 15px;
+    background-color: rgb(96, 108, 56);
+    border-radius: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.polza {
+    display: inline-block;
+    list-style: none;
+    text-align: left;
+}
+
+.icon-investition::before {
+    content: '\1F4B8';
+}
+
+.icon-square::before {
+    content: '\1F3E0';
+}
+
+.icon-profit::before {
+    content: '\1F911';
+}
+
+.icon-timeout::before {
+    content: '\231B';
+}
+
+.icon-diamond::before {
+    content: '\1F48E';
+}
+
+.icon-royalty::before {
+    content: '\1F4B0';
+}
+
+.icon-student::before {
+    content: '\1F393';
+}
+
+.icon-cafe::before {
+    content: '\2705';
+}
+
+.icon-repair::before {
+    content: '\1F528';
+}
+
+.icon-marketing::before {
+    content: '\1F4C8';
+}
+
+.icon-menu::before {
+    content: '\1F950';
+}
+
+ul {
+    margin-top: 50px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+img {
+    height: 350px;
+    width: 500px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 10px 0px;
+}
+
+@supports (display: grid) {
+    .Scroll_Wrapper {
+        display: grid;
+        grid-auto-flow: column;
+        max-width: min-content;
+        grid-template-rows: auto;
+    }
+}
+
+@supports (scroll-snap-type: x mandatory) {
+    .Scroll_Wrapper {
+        scroll-snap-type: x mandatory;
+    }
+    .photocoffeeschop {
+        scroll-snap-align: none;
+    }
+}
+
+.Scroll_Wrapper {
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: initial;
+}
+
+.photocoffeeschop::-webkit-scrollbar {
+    display: inline-table;
+}
+
+.oformlenie {
+    width: 55%;
+    height: 400px;
+    text-align: center;
+    border: 3px solid rgb(96, 108, 56);
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 0px 10px 10px 0px;
+}
+
+.formfranchise {
+    display: inline-block;
+    text-align: right;
+    height: 200px;
+    width: 420px;
+    margin: 0 auto;
+}
+
+.form-group {
+    padding: 3px;
+}
+
+input {
+    background-color: rgb(242, 191, 123);
+    border: 3px solid rgb(96, 108, 56);
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    width: 300px;
+    
+}
+
+.submitbd {
+    
+    border: 3px solid rgb(96, 108, 56);
+    background-color: rgb(242, 191, 123);
+    border-radius: 20px;
+    width: 338px;
+    height: 50px;
+}
+
+.submitbd:hover {
+    background: #556b2f;
+}
+
+footer {
+    background-color: rgb(174, 168, 168);
+    color: black;
+    width: 100%;
+    height: 200px;
+    margin-top: 30px;
+    gap: 30px;
+    display: flex;
+}
+
+.addresofice, .autors, .map {
+    width: 33.33%;
+    text-align: center;
+}
