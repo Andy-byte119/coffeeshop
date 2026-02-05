@@ -12,9 +12,10 @@ class Menu(Base):
     __tablename__ = "menu"
 
     id = Column(Integer, primary_key = True)
-    title = Column(String(30), nullable = False)
+    title = Column(String(50), nullable = False)
     photo = Column(String(200), nullable = False)
     price = Column(Integer, nullable = False)
+    category = Column(String(30), nullable = False)
 
 class FranchiseRequest(Base):
     __tablename__ = "franchise_request"
@@ -23,6 +24,14 @@ class FranchiseRequest(Base):
     full_name = Column(String(30), nullable = False)
     phone = Column(String(15), nullable = False)
     email = Column(String(100), nullable = False)
+
+class FranchisePhoto(Base):
+    __tablename__ = "franchise_photo"
+
+    id = Column(Integer, primary_key = True)
+    franchise_type = Column(String(100), nullable = False)
+    image_url = Column(String(500), nullable = False)
+    
 
 Base.metadata.create_all(engine)
 print("Таблицы созданы")

@@ -1,0 +1,23 @@
+.swiper {
+	margin: 0 auto;
+	width: 100%;
+	padding-bottom: 50px !important;
+	overflow: hidden !important;
+}
+
+.swiper-wrapper {
+	display: flex;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 300px;
+}
+
+.no-select {
+	-webkit-user-select: none; /* Chrome/Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE/Edge */
+	user-select: none; /* Стандартный синтаксис */
+}

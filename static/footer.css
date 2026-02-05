@@ -1,0 +1,17 @@
+footer {
+    background-color: rgb(174, 168, 168);
+    color: black;
+    width: 100%;
+    height: 200px;
+    margin-top: 30px;
+    gap: 30px;
+    display: flex;
+}
+
+.creators, .location, .map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33.33%;
+    
+}

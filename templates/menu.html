@@ -4,93 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/menu.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='swiper-bundle.min.css')}}">
     <title>Меню</title>
     <link rel="icon" href="static/icon/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <section class="menu">
-        <!--Всю информацию импортировать из базы данных-->
-        <!--Пока оставлю как есть-->
-        <h2 class="razdel">Кофе</h2>
-        <nav class="primer">
-            <section class="kartochka">
-                <figure>
-                    <img src="static/image-menu/Latte.jpg">
-                </figure>
-                <figcaption>
-                    <p>Латте</p>
-                    <p>цена: 100руб.</p>
-                </figcaption>
-            </section>
-            <section class="kartochka">
-                <figure>
-                    <img src="static/image-menu/Kapuchino.jpg">
-                </figure>
-                <figcaption>
-                    <p>Капучино</p>
-                    <p>цена: 120руб.</p>
-                </figcaption>
-            </section>
-        </nav>
-    </section>
-    <section class="menu">
-        <h2 class="razdel">Рафы</h2>
-        <nav class="primer">
-            <section class="kartochka">
-                <figure>
-                    <img src="static/image-menu/rafcoffee.jpg">
-                </figure>
-                <figcaption>
-                    <p>Раф классический</p>
-                    <p>цена: 175руб.</p>
-                </figcaption>
-            </section>
-        </nav>
-    </section>
-    <section class="menu">
-        <h2>Чаи</h2>
-        <nav class="primer">
-            <section class="kartochka">
-                <figure>
-                    <img src="static/image-menu/green_tea.jpg">
-                </figure>
-                <figcaption>
-                    <p>Зелёный чай</p>
-                    <p>цена: 100руб.</p><!--откорректировать цену в базе данных-->
-                </figcaption>
-            </section>
-        </nav>
-    </section>
-    <section class="menu">
-        <h2>Кондитерские изделия</h2>
+    <section class="perv-slova">
+        <div class="block-text">
+            <h1 class="first-text">Мы всегда стараемся сделать наше меню разнообразным!</h1>
+        </div>
+        <figure class="block-image">
+            <img class="first-image" src="static/image-menu/CoffeeMenu.jpg">
+        </figure>
     </section>
     <section class="menu">
         <h2>Сэндвичи</h2>
-        <nav class="primer">
-            <section class="kartochka">
-                <figure>
-                    <img src="static/image-menu/Croissants/croissant_s_kyricey_i_ogyrcami.jpg">
-                </figure>
-                <figcaption>
-                    <p>Сэндвич на круассане с курицей</p>
-                    <p>цена: 190руб.</p>
-                </figcaption>
-            </section>
-        </nav>
-    </section>
-    <section class="menu">
+        <section class="menu">
+            {% with products = sandwichs, slider_id = 'sandwich' %}
+                <div class="swiper {{ slider_id }}-swiper">
+                    <div class="swiper-wrapper">
+                        {% for item in products %}
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <img class="image-slide" src="{{ url_for('static', filename='image-menu/' + item.photo) }}" alt="{{ item.title }}">
+                                <h3>{{ item.title }}</h3>
+                                <p class="price">Цена: {{ item.price }} ₽</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            {% endwith %}
+        </section>
+        <h2>Круассаны</h2>
+        <section class="menu">
+            {% with products = croissants, slider_id = 'croissant' %}
+                <div class="swiper {{ slider_id }}-swiper">
+                    <div class="swiper-wrapper">
+                        {% for item in products %}
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <img class="image-slide" src="{{ url_for('static', filename='image-menu/' + item.photo) }}" alt="{{ item.title }}">
+                                <h3>{{ item.title }}</h3>
+                                <p class="price">Цена: {{ item.price }} ₽</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            {% endwith %}
+        </section>
         <h2>Салаты</h2>
-        <nav>
-            <section class="kartochka">
-                <figure>
-                    <img src="static/image-menu/salat_Good.jpg">
-                </figure>
-                <figcaption>
-                    <p>Фирменный салат Good</p>
-                    <p>цена: 240руб.</p>
-                </figcaption>
-            </section>
-        </nav>
+        <section class="menu">
+            {% with products = salats, slider_id = 'salat' %}
+                <div class="swiper {{ slider_id }}-swiper">
+                    <div class="swiper-wrapper">
+                        {% for item in products %}
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <img class="image-slide"  src="{{ url_for('static', filename='image-menu/' + item.photo) }}" alt="{{ item.title }}">
+                                <h3>{{ item.title }}</h3>
+                                <p class="price">Цена: {{ item.price }} ₽</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            {% endwith %}
+        </section>
+        <h2>Кофе</h2>
+        <section class="menu">
+            {% with products = coffee, slider_id = 'coffee' %}
+                <div class="swiper {{ slider_id }}-swiper">
+                    <div class="swiper-wrapper">
+                        {% for item in products %}
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <img class="image-slide" src="{{ url_for('static', filename='image-menu/' + item.photo) }}" alt="{{ item.title }}">
+                                <h3>{{ item.title }}</h3>
+                                <p class="price">Цена: {{ item.price }} ₽</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            {% endwith %}
+        </section>
+        <h2>Чаи</h2>
+        <section class="menu">
+            {% with products = black_tea, slider_id = 'blacktea' %}
+                <div class="swiper {{ slider_id }}-swiper">
+                    <div class="swiper-wrapper">
+                        {% for item in products %}
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <img class="image-slide" src="{{ url_for('static', filename='image-menu/' + item.photo) }}" alt="{{ item.title }}">
+                                <h3>{{ item.title }}</h3>
+                                <p class="price">Цена: {{ item.price }} ₽</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            {% endwith %}
+        </section>
+        <h2>Зелёные чаи</h2>
+        <section class="menu">
+            {% with products = green_tea, slider_id = 'greentea' %}
+                <div class="swiper {{ slider_id }}-swiper">
+                    <div class="swiper-wrapper">
+                        {% for item in products %}
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <img class="image-slide" src="{{ url_for('static', filename='image-menu/' + item.photo) }}" alt="{{ item.title }}">
+                                <h3>{{ item.title }}</h3>
+                                <p class="price">Цена: {{ item.price }} ₽</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            {% endwith %}
+        </section>
+        <h2>Рафы</h2>
+        <section class="menu">
+            {% with products = raf_coffee, slider_id = 'rafcoffee' %}
+                <div class="swiper {{ slider_id }}-swiper">
+                    <div class="swiper-wrapper">
+                        {% for item in products %}
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <img class="image-slide" src="{{ url_for('static', filename='image-menu/' + item.photo) }}" alt="{{ item.title }}">
+                                <h3>{{ item.title }}</h3>
+                                <p class="price">Цена: {{ item.price }} ₽</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            {% endwith %}
+        </section>
     </section>
+    {% include 'footer.html' %}
+<script src="{{ url_for('static', filename='JS/swiper-bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='JS/menu-swiper.js') }}"></script>
 </body>
 </html>

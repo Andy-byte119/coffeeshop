@@ -104,42 +104,30 @@ li {
     margin-bottom: 5px;
 }
 
-img {
-    height: 350px;
-    width: 500px;
-    border-radius: 20px;
-    box-shadow: 0px 10px 10px 0px;
+.swiper {
+	margin: 0 auto;
+	width: 100%;
+	padding-bottom: 50px !important;
+	overflow: hidden !important;
 }
 
-@supports (display: grid) {
-    .Scroll_Wrapper {
-        display: grid;
-        grid-auto-flow: column;
-        max-width: min-content;
-        grid-template-rows: auto;
-    }
+.swiper-wrapper {
+	display: flex;
 }
 
-@supports (scroll-snap-type: x mandatory) {
-    .Scroll_Wrapper {
-        scroll-snap-type: x mandatory;
-    }
-    .photocoffeeschop {
-        scroll-snap-align: none;
-    }
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 300px;
 }
 
-.Scroll_Wrapper {
-    width: 100%;
-    white-space: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: initial;
+.no-select {
+	-webkit-user-select: none; /* Chrome/Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE/Edge */
+	user-select: none; /* Стандартный синтаксис */
 }
 
-.photocoffeeschop::-webkit-scrollbar {
-    display: inline-table;
-}
 
 .oformlenie {
     width: 55%;
@@ -184,19 +172,4 @@ input {
 
 .submitbd:hover {
     background: #556b2f;
-}
-
-footer {
-    background-color: rgb(174, 168, 168);
-    color: black;
-    width: 100%;
-    height: 200px;
-    margin-top: 30px;
-    gap: 30px;
-    display: flex;
-}
-
-.addresofice, .autors, .map {
-    width: 33.33%;
-    text-align: center;
 }

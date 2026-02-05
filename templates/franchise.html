@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="static/franchise.css">
     <title>Франшизы GoodCofee</title>
     <link rel="icon" href="static/icon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='swiper-bundle.min.css')}}">
 </head>
 <body>
     <div class="monoimg">
         <!--доделать как на первой странице. решить проблему с отсупом справа-->
-        <img class="privetstvieimg" src="static/imagefranchise/privetstvie-franchise.jpg" alt="девушка за столиком раздачи">
+        <img class="privetstvieimg" src="static/big_images/privetstvie-franchise.jpg" alt="девушка за столиком раздачи">
         <h1 class="mainzagolovok">Откройте кофейню в своём городе и станьте частью семьи GoodCofee</h1>
     </div>
     <section class="textblock">
@@ -33,14 +34,19 @@
             <li class="icon-profit">Примерная прибыль - от 100тыс.</li>
             <li class="icon-timeout">Примерная окупаемость - 18мес.</li>
         </ul>
-        <nav class="Scroll_Wrapper">
-            <figure class="photocoffeeschop">
-                <img src="static/imagefranchise/barman-bar.jpg">
-                <img src="static/imagefranchise/barman-bar2.jpg">
-                <img src="static/imagefranchise/blur-kofeina-inter-er.jpg">
-                <img src="static/imagefranchise/bar-coffeeschop.jpg">
-            </figure>
-        </nav>
+        {% with photos = coffeeshop_without_kitchen, slider_id = 'coffeeshop_without_kitchen' %}
+        <div class="swiper no-select {{ slider_id }}">
+            <div class="swiper-wrapper">
+                {% for item in photos %}
+                <div class="swiper-slide">
+                <!-- ПРОВЕРЬ ЭТУ СТРОКУ: -->
+                    <img src="{{ url_for('static', filename='slide_img/' + item.image_url) }}" alt="Photo">
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        {% endwith %}
     </section>
     <section class="aboutfranchise">
         <h2 class="zagolovok">Стационарная кофейня с кухней</h2>
@@ -50,13 +56,18 @@
             <li class="icon-profit">Примерная прибыль - от 250тыс.</li>
             <li class="icon-timeout">Примерная окупаемость - 12мес.</li>
         </ul>
-        <nav class="Scroll_Wrapper">
-            <figure class="photocoffeeschop">
-                <img src="static/imagefranchise/coffee-shop-up.jpg">
-                <img src="static/imagefranchise/interier-s-cvetkom.jpg">
-                <img src="static/imagefranchise/bar-concept.jpg">
-            </figure>
-        </nav>
+        {% with photos = coffeeshop_with_kitchen, slider_id = 'coffeeshop_with_kitchen' %}
+        <div class="swiper no-select {{ slider_id }}">
+            <div class="swiper-wrapper">
+            {% for item in photos %}
+                <div class="swiper-slide">
+                    <img src="{{ url_for('static', filename='slide_img/' + item.image_url) }}" alt="Наша кофейня">
+                </div>
+            {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        {% endwith %}
     </section>
     <section class="oformlenie">
         <h2 class="zagolovok">Понравились кофейни? присоединяйтесь к нам!</h2>
@@ -80,16 +91,8 @@
         </form>
     </section>
     <!--сделать футер. готово!-->
-    <footer>
-        <section class="addresofice">
-            <p class="location">Наш головной офис находится по адресу<address>Город Рязань, ул. Ленина 24</address></p>
-        </section>
-        <section class="autors">
-            <p class="creators">На сайте используются фотографии с сайта Freepik</p>
-        </section>
-        <section class="map">
-            <p class="karta">тут должна быть карта</p>
-        </section>
-    </footer>
+    {%include 'footer.html'%}
+    <script src="{{url_for('static', filename='JS/swiper-bundle.min.js')}}"></script>
+    <script src="{{url_for('static', filename='JS/mainswiper.js')}}"></script>
 </body>
 </html>
